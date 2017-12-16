@@ -111,8 +111,8 @@ namespace Cinemachine
             [Tooltip("If no input has been detected, the camera will wait this long in seconds before moving its heading to the zero position.")]
             public float m_RecenterWaitTime;
 
-            /// <summary>Maximum angular speed of recentering.  Will accelerate into and decelerate out of this</summary>
-            [Tooltip("Maximum angular speed of recentering.  Will accelerate into and decelerate out of this.")]
+            /// <summary>Maximum angular Speed of recentering.  Will accelerate into and decelerate out of this</summary>
+            [Tooltip("Maximum angular Speed of recentering.  Will accelerate into and decelerate out of this.")]
             public float m_RecenteringTime;
 
             /// <summary>Constructor with specific field values</summary>

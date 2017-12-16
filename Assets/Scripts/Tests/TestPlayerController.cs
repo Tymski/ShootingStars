@@ -8,11 +8,17 @@ public class TestPlayerController : MonoBehaviour
 {
     public int PlayerId;
 
+    public GameObject BulletPrefab;
+
+    public float Speed;
+
     private Player _player;
 
     private SpriteRenderer _spriteRenderer;
 
     private Transform _transform;
+
+    private Transform _spriteTransform;
 
     private float _horizontal, _vertical;
 
@@ -20,6 +26,8 @@ public class TestPlayerController : MonoBehaviour
     {
         _transform = transform;
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        _spriteTransform = _spriteRenderer.transform;
     }
 
     public void Start()
@@ -29,16 +37,33 @@ public class TestPlayerController : MonoBehaviour
 
     public void Update()
     {
+        _spriteTransform.LookAt(_spriteTransform.position + Camera.main.transform.rotation * Vector3.forward,
+            Camera.main.transform.rotation * Vector3.up);
+    
         _horizontal = _player.GetAxis(PlayerAxis.HORIZONTAL);
         _vertical = _player.GetAxis(PlayerAxis.VERTICAL);
 
-        Debug.Log("A: " + _player.GetButtonDown(PlayerButton.A) + "B: " + _player.GetButtonDown(PlayerButton.B) + "Y: " + _player.GetButtonDown(PlayerButton.Y) + "X: " + _player.GetButtonDown(PlayerButton.X));
+        if(_player.GetButtonDown(PlayerButton.A))
+            Shoot();
+        
     }
 
     private void FixedUpdate()
     {
-        _transform.position = new Vector3(_transform.position.x + _horizontal * 3f * Time.fixedDeltaTime,
-            _transform.position.y + _vertical * 3f * Time.fixedDeltaTime, _transform.position.z);
+        _transform.position = new Vector3(_transform.position.x + _horizontal * Speed * Time.fixedDeltaTime,
+            _transform.position.y , _transform.position.z + _vertical * Speed * Time.fixedDeltaTime);
     }
 
+    public void Shoot()
+    {
+        var shootVector = new Vector3(_horizontal, 0, _vertical);
+
+        Debug.Log(shootVector);
+
+        
+
+        var bullet = Instantiate(BulletPrefab, _transform.position, Quaternion.identity);
+    
+        bullet.GetComponent<TestBullet>().Set(shootVector);
+    }
 }
