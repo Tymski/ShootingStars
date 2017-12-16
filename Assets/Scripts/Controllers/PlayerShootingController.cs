@@ -17,9 +17,8 @@ public class PlayerShootingController : MonoBehaviour
                 {
                     Debug.Log("There is no object");
                 }
-                
-                
                 obj.GetComponent<BulletScript>().SetBulletDirection(LastVector3);
+                obj.GetComponent<BulletDestroy>().SetPlayer(this.gameObject);
                 obj.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 obj.SetActive(true);
             }
