@@ -11,6 +11,6 @@ public class BulletScript : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(BulletDirection.x * Speed * Time.deltaTime, 0, BulletDirection.z * Speed * Time.deltaTime);
+        transform.Translate(BulletDirection.x / BulletDirection.magnitude * Speed * Time.deltaTime, 0, BulletDirection.z / BulletDirection.magnitude * Speed * Time.deltaTime);
     }
 }

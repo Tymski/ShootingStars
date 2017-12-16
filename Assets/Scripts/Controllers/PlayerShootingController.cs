@@ -4,7 +4,7 @@ using GamepadInput;
 
 public class PlayerShootingController : MonoBehaviour
 {
-
+    public Vector3 LastVector3 = new Vector3(1,0,0);
     void Update()
     {
         {
@@ -15,9 +15,10 @@ public class PlayerShootingController : MonoBehaviour
                 {
                     Debug.Log("There is no object");
                 }
-                obj.GetComponent<BulletScript>().SetBulletDirection(new Vector3(Input.GetAxis("Horizontal"), 0 , Input.GetAxis("Vertical")));
+                Vector3 tmpVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                if(tmpVector.magnitude>0)LastVector3 = tmpVector;
+                obj.GetComponent<BulletScript>().SetBulletDirection(LastVector3);
                 obj.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                //obj.transform.rotation = transform.rotation;
                 obj.SetActive(true);
             }
         }
