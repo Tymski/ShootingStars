@@ -116,6 +116,7 @@ ModelImporter:
     100216: Ground_MeshPart2
     100218: Ground_MeshPart3
     100220: Kaktus_005
+    100222: Cylinder
     400000: Beczka
     400002: Beczka_001
     400004: Box
@@ -227,6 +228,7 @@ ModelImporter:
     400216: Ground_MeshPart2
     400218: Ground_MeshPart3
     400220: Kaktus_005
+    400222: Cylinder
     2300000: Beczka
     2300002: Beczka_001
     2300004: Box
@@ -330,6 +332,7 @@ ModelImporter:
     2300200: Ground_MeshPart2
     2300202: Ground_MeshPart3
     2300204: Kaktus_005
+    2300206: Cylinder
     3300000: Beczka
     3300002: Beczka_001
     3300004: Box
@@ -433,6 +436,7 @@ ModelImporter:
     3300200: Ground_MeshPart2
     3300202: Ground_MeshPart3
     3300204: Kaktus_005
+    3300206: Cylinder
     4300000: Ground
     4300002: Beczka
     4300004: Beczka_001
@@ -536,6 +540,7 @@ ModelImporter:
     4300200: Ground_MeshPart2
     4300202: Ground_MeshPart3
     4300204: Kaktus_005
+    4300206: Cylinder
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -574,6 +579,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Ground
     second: {fileID: 2100000, guid: b2df26b8271f49f4abcb487be3873a96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 963fd73abee537b46851daea550679d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
