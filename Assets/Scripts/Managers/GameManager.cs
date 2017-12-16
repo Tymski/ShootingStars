@@ -4,6 +4,7 @@ namespace Managers
 {
     [RequireComponent(typeof(AudioManager))]
     [RequireComponent(typeof(ScenesManager))]
+    [RequireComponent(typeof(ScenesManager))]
     public class GameManager : MonoBehaviour
     {
         private static GameManager _instance;
@@ -12,8 +13,9 @@ namespace Managers
     
         private ScenesManager _scenesManager;
 
-        private LevelManager _levelManager; 
+        private LevelManager _levelManager;
 
+        private InputManager.InputManager _inputManager;
 
         /// <summary>
         /// GameManager Singletone
@@ -37,6 +39,11 @@ namespace Managers
         public ScenesManager ScenesManager
         {
             get { return _scenesManager; }
+        }
+
+        public InputManager.InputManager InputManager
+        {
+            get { return _inputManager; }
         }
 
         /// <summary>
@@ -74,6 +81,7 @@ namespace Managers
         {
             _audioManager = GetComponent<AudioManager>();
             _scenesManager = GetComponent<ScenesManager>();
+            _inputManager = GetComponent<InputManager.InputManager>();
         }
     }
 }
