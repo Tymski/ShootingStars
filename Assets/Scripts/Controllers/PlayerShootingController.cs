@@ -1,24 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using GamepadInput;
+using Managers.InputManager;
 
 public class PlayerShootingController : MonoBehaviour
 {
-    public Vector3 LastVector3 = new Vector3(1,0,0);
+    private Vector3 _lastVector3 = new Vector3(1,0,0);
+
+    private PlayerMovementController _playerMovementController;
+
+    private void Awake()
+    {
+        _playerMovementController = GetComponent<PlayerMovementController>();
+    }
+
     void Update()
     {
-        Vector3 tmpVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if (tmpVector.magnitude > 0) LastVector3 = tmpVector;
+        Vector3 tmpVector = _playerMovementController.MoveDirection;
+
+        if (tmpVector.magnitude > 0) _lastVector3 = tmpVector;
         {
-            if (Input.GetKeyDown("r"))
+            if (_playerMovementController.Player.GetButtonDown(PlayerButton.A))
             {
                 GameObject obj = CreateObjectPoolingController.current.GetPooledObject();
+
                 if (obj == null)
-                {
-                    Debug.Log("There is no object");
-                }
-                obj.GetComponent<BulletScript>().SetBulletDirection(LastVector3);
-                obj.GetComponent<BulletDestroy>().SetPlayer(this.gameObject);
+                    throw new UnityException("Pooler is empty!");
+
+                obj.GetComponent<BulletController>().SetBulletDirection(_lastVector3);
+                obj.GetComponent<BulletCollisionController>().SetPlayer(this.gameObject);
                 obj.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 obj.SetActive(true);
             }

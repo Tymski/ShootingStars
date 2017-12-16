@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BulletDestroy : MonoBehaviour
+public class BulletCollisionController : MonoBehaviour
 {
     public GameObject ThisPlayer;
     public float DestroyTime = 10f;
