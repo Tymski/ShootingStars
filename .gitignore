@@ -31,3 +31,4 @@ sysinfo.txt
 
 # Blender backup copies
 *.blend1
+*.blend1.meta
