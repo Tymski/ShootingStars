@@ -46,7 +46,6 @@ public class TestPlayerController : MonoBehaviour
         if(_player.GetButtonDown(PlayerButton.A))
             Shoot();
         
-        Debug.Log(_horizontal);
     }
 
     private void FixedUpdate()
@@ -59,8 +58,12 @@ public class TestPlayerController : MonoBehaviour
     {
         var shootVector = new Vector3(_horizontal, 0, _vertical);
 
-        shootVector = new Vector3(shootVector.x / shootVector.magnitude, 0, shootVector.y / shootVector.magnitude);
+        Debug.Log(shootVector);
+
+        
 
         var bullet = Instantiate(BulletPrefab, _transform.position, Quaternion.identity);
+    
+        bullet.GetComponent<TestBullet>().Set(shootVector);
     }
 }
