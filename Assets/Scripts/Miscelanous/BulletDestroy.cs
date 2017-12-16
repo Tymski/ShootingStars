@@ -13,7 +13,10 @@ public class BulletDestroy : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other);
+        if (other.CompareTag("Player"))
+            return;
         gameObject.SetActive(false);
+
     }
 
     void Destroy()
