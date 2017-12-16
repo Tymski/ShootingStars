@@ -10,6 +10,12 @@ public class BulletDestroy : MonoBehaviour
         Invoke("Destroy", DestroyTime);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other);
+        gameObject.SetActive(false);
+    }
+
     void Destroy()
     {
         gameObject.SetActive(false);
