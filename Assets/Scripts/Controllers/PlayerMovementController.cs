@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovementController : MonoBehaviour
 {
     public float Speed;
     public CharacterController CharacterController;
     private Vector3 _moveDirection = Vector3.zero;
+
+    private float _direction;
 
     void Awake()
     {

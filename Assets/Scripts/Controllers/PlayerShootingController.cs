@@ -1,39 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using GamepadInput;
 
 public class PlayerShootingController : MonoBehaviour
 {
 
-    public float FireTime = 0.5f;
-    public GameObject Bullet;
-
-    public int pooledAmount = 20;
-    private List<GameObject> _bullets;
-    
-
-	void Start () {
-		_bullets = new List<GameObject>();
-	    for (int i = 0; i < pooledAmount; i++)
-	    {
-	        GameObject obj = (GameObject) Instantiate(Bullet);
-	        obj.SetActive(false);
-            _bullets.Add(obj);
-	    }
-
-        InvokeRepeating("Fire", FireTime, FireTime);
-	}
-	
-	void Fire ()
-	{
-	    for (int i = 0; i < _bullets.Count; i++)
-	    {
-	        if (!_bullets[i].activeInHierarchy)
-	        {
-	            _bullets[i].transform.position = transform.position;
-	            _bullets[i].transform.rotation = transform.rotation;
-	            _bullets[i].SetActive(true);
-	            break;
-	        }
-	    }
-	}
+    void Update()
+    {
+        {
+            if (Input.GetKeyDown("r"))
+            {
+                GameObject obj = CreateObjectPoolingController.current.GetPooledObject();
+                if (obj == null)
+                {
+                    Debug.Log("There is no object");
+                }
+                obj.GetComponent<BulletScript>().SetBulletDirection(new Vector3(Input.GetAxis("Horizontal"), 0 , Input.GetAxis("Vertical")));
+                obj.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                //obj.transform.rotation = transform.rotation;
+                obj.SetActive(true);
+            }
+        }
+    }
 }

@@ -20,7 +20,7 @@ namespace Cinemachine
 
         /// <summary>How fast the axis value can travel.  Increasing this number
         /// makes the behaviour more responsive to joystick input</summary>
-        [Tooltip("The maximum speed of this axis in units/second")]
+        [Tooltip("The maximum Speed of this axis in units/second")]
         public float m_MaxSpeed;
 
         /// <summary>The amount of time in seconds it takes to accelerate to
@@ -140,7 +140,7 @@ namespace Cinemachine
                 }
                 else 
                 {
-                    // Accelerate to the target speed
+                    // Accelerate to the target Speed
                     float a = Mathf.Abs(targetSpeed - mCurrentSpeed) / Mathf.Max(Epsilon, m_AccelTime);
                     mCurrentSpeed += Mathf.Sign(targetSpeed) * a * deltaTime;
                     if (Mathf.Sign(mCurrentSpeed) == Mathf.Sign(targetSpeed) 

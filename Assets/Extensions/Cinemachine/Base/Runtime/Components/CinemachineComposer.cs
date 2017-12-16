@@ -85,15 +85,15 @@ namespace Cinemachine
         public float m_DeadZoneHeight = 0.1f;
 
         /// <summary>When target is within this region, camera will gradually move to re-align
-        /// towards the desired position, depending onm the damping speed</summary>
+        /// towards the desired position, depending onm the damping Speed</summary>
         [Range(0f, 2f)]
-        [Tooltip("When target is within this region, camera will gradually rotate horizontally to re-align towards the desired position, depending on the damping speed.")]
+        [Tooltip("When target is within this region, camera will gradually rotate horizontally to re-align towards the desired position, depending on the damping Speed.")]
         public float m_SoftZoneWidth = 0.8f;
 
         /// <summary>When target is within this region, camera will gradually move to re-align
-        /// towards the desired position, depending onm the damping speed</summary>
+        /// towards the desired position, depending onm the damping Speed</summary>
         [Range(0f, 2f)]
-        [Tooltip("When target is within this region, camera will gradually rotate vertically to re-align towards the desired position, depending on the damping speed.")]
+        [Tooltip("When target is within this region, camera will gradually rotate vertically to re-align towards the desired position, depending on the damping Speed.")]
         public float m_SoftZoneHeight = 0.8f;
 
         /// <summary>A non-zero bias will move the targt position away from the center of the soft zone</summary>
