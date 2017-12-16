@@ -61,7 +61,7 @@ namespace Managers
                 _instance = this;
             else if (_instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
                 return; 
             }
 

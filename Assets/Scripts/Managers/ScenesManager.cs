@@ -32,22 +32,39 @@ namespace Managers
 
         private IEnumerator LoadSceneAsync(string sceneName)
         {
+            Debug.Log("Load scene " + _loadingSceneName);
+
             var asyncOperation = SceneManager.LoadSceneAsync(_loadingSceneName, LoadSceneMode.Additive);
 
             yield return asyncOperation;
+
+            yield return new WaitForSeconds(1.0f);
+
+            Debug.Log("Unload scene " + _currentScene);
 
             asyncOperation = SceneManager.UnloadSceneAsync(_currentScene);
 
             yield return asyncOperation;
 
+            yield return new WaitForSeconds(1.0f);
+
+            Debug.Log("Load scene " + sceneName);
+
             asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
             yield return asyncOperation;
+
+
+            yield return new WaitForSeconds(1.0f);
+
+
+            Debug.Log("Unload scene " + _currentScene);
 
             asyncOperation = SceneManager.UnloadSceneAsync(_loadingSceneName);
 
             yield return asyncOperation;
 
+            yield return new WaitForSeconds(1.0f);
             Debug.Log("Success!");
 
             _currentScene = sceneName;
