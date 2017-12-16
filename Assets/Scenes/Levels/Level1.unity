@@ -113,6 +113,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1085239232
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892660813838656, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114452292414368610, guid: 71705652b5f6ee54c81c0ff1b6214cc3,
+        type: 2}
+      propertyPath: LevelName
+      value: Level1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 71705652b5f6ee54c81c0ff1b6214cc3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1516949806
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +170,7 @@ GameObject:
   - component: {fileID: 1516949810}
   - component: {fileID: 1516949809}
   - component: {fileID: 1516949808}
+  - component: {fileID: 1516949807}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -130,6 +178,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &1516949807
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1516949806}
+  m_Enabled: 1
 --- !u!124 &1516949808
 Behaviour:
   m_ObjectHideFlags: 0

@@ -1,55 +1,54 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
-
-[RequireComponent(typeof(AudioSource))]
-public class AudioManager : MonoBehaviour
+namespace Managers
 {
-    [SerializeField]
-    private AudioClip[] _backgroundAudioClips;
-
-    [SerializeField]
-    private AudioClip[] _sfxs;
-
-    private AudioSource _backgroundMusic;
-    private Transform _camera;
-
-    private void Awake()
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioManager : MonoBehaviour
     {
-        _backgroundMusic = GetComponent<AudioSource>();
-        _camera = Camera.main.transform;
-    }
+        [SerializeField]
+        private AudioClip[] _backgroundAudioClips;
 
-    public void PlayMusic(int id = 0)
-    {
-        if (_backgroundAudioClips.Length >= id)
+        [SerializeField]
+        private AudioClip[] _sfxs;
+
+        private AudioSource _backgroundMusic;
+
+        private void Awake()
         {
-            Debug.LogWarning("There is no music with that id.");
-            return;
+            _backgroundMusic = GetComponent<AudioSource>();
         }
 
-        _backgroundMusic.clip = _backgroundAudioClips[id];
-        _backgroundMusic.Play();
-    }
-
-    public void StopMusic()
-    {
-        _backgroundMusic.Stop();
-    }
-
-    public void ChangeVolume(float volume)
-    {
-        _backgroundMusic.volume = volume;
-    }
-
-    public void PlaySfx(int id)
-    {
-        if (_sfxs.Length >= id)
+        public void PlayMusic(int id = 0)
         {
-            Debug.LogWarning("There is no sfx with that id.");
-            return;
+            if (_backgroundAudioClips.Length >= id)
+            {
+                Debug.LogWarning("There is no music with that id.");
+                return;
+            }
+
+            _backgroundMusic.clip = _backgroundAudioClips[id];
+            _backgroundMusic.Play();
         }
 
-        AudioSource.PlayClipAtPoint(_sfxs[id], _camera.position);
+        public void StopMusic()
+        {
+            _backgroundMusic.Stop();
+        }
+
+        public void ChangeVolume(float volume)
+        {
+            _backgroundMusic.volume = volume;
+        }
+
+        public void PlaySfx(int id)
+        {
+            if (_sfxs.Length >= id)
+            {
+                Debug.LogWarning("There is no sfx with that id.");
+                return;
+            }
+
+            AudioSource.PlayClipAtPoint(_sfxs[id], Camera.main.transform.position);
+        }
     }
 }
