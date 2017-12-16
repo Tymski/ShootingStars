@@ -18,14 +18,15 @@ public class BulletDestroy : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other);
-        if (other.CompareTag("Player") && other.gameObject == ThisPlayer)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("To ten gracz");
-            return;
-        }
-  
-        gameObject.SetActive(false);
+            if(other.gameObject == ThisPlayer)
+                return;
 
+            other.gameObject.SetActive(false);
+            KillPlayer();
+        }
+        gameObject.SetActive(false);
     }
 
     void Destroy()
@@ -36,5 +37,10 @@ public class BulletDestroy : MonoBehaviour
     void OnDisable()
     {
         CancelInvoke();
+    }
+
+    void KillPlayer()
+    {
+        gameObject.SetActive(false);
     }
 }
