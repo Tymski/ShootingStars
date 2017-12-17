@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 135281275593561864}
   - component: {fileID: 199445161741698104}
   - component: {fileID: 198736803760901250}
+  - component: {fileID: 114933548070932400}
   m_Layer: 0
   m_Name: StarCollectible
   m_TagString: Star
@@ -88,6 +89,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &114933548070932400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593686780702034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb987c756b1d1bb4d9ff518ece9b40a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 0}
 --- !u!135 &135281275593561864
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -160,7 +173,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1673987885
+  randomSeed: 227861078
   InitialModule:
     serializedVersion: 3
     enabled: 1
