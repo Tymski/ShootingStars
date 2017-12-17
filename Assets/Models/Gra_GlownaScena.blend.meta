@@ -126,6 +126,7 @@ ModelImporter:
     100236: Stones1_001
     100238: Stones1_002
     100240: Stones6_002
+    100242: Konik
     400000: Beczka
     400002: Beczka_001
     400004: Box
@@ -247,6 +248,7 @@ ModelImporter:
     400236: Stones1_001
     400238: Stones1_002
     400240: Stones6_002
+    400242: Konik
     2300000: Beczka
     2300002: Beczka_001
     2300004: Box
@@ -360,6 +362,7 @@ ModelImporter:
     2300220: Stones1_001
     2300222: Stones1_002
     2300224: Stones6_002
+    2300226: Konik
     3300000: Beczka
     3300002: Beczka_001
     3300004: Box
@@ -473,6 +476,7 @@ ModelImporter:
     3300220: Stones1_001
     3300222: Stones1_002
     3300224: Stones6_002
+    3300226: Konik
     4300000: Ground
     4300002: Beczka
     4300004: Beczka_001
@@ -586,6 +590,7 @@ ModelImporter:
     4300220: Stones1_002
     4300222: Stones6_002
     4300224: Stones1_001
+    4300226: Konik
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
