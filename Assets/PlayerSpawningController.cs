@@ -24,11 +24,7 @@ public class PlayerSpawningController : MonoBehaviour
 
     public static Vector3 GetSpawningPoint()
     {
-        var rand = 0;
-        do
-        {
-             rand = Random.Range(0, _instance._spawns.Length);
-        } while (_instance.Cooldown.Contains(rand));
+        var rand = Random.Range(0, _instance._spawns.Length);
 
         return _instance._spawns[rand].position;
     }
