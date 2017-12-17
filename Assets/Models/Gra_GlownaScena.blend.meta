@@ -117,16 +117,6 @@ ModelImporter:
     100218: Ground_MeshPart3
     100220: Kaktus_005
     100222: Cylinder
-    100224: FakeSky
-    100226: Building1_002
-    100228: Stones6_001
-    100230: Beczka_004
-    100232: Text
-    100234: Text_001
-    100236: Stones1_001
-    100238: Stones1_002
-    100240: Stones6_002
-    100242: Konik
     400000: Beczka
     400002: Beczka_001
     400004: Box
@@ -239,16 +229,6 @@ ModelImporter:
     400218: Ground_MeshPart3
     400220: Kaktus_005
     400222: Cylinder
-    400224: FakeSky
-    400226: Building1_002
-    400228: Stones6_001
-    400230: Beczka_004
-    400232: Text
-    400234: Text_001
-    400236: Stones1_001
-    400238: Stones1_002
-    400240: Stones6_002
-    400242: Konik
     2300000: Beczka
     2300002: Beczka_001
     2300004: Box
@@ -353,16 +333,6 @@ ModelImporter:
     2300202: Ground_MeshPart3
     2300204: Kaktus_005
     2300206: Cylinder
-    2300208: FakeSky
-    2300210: Building1_002
-    2300212: Stones6_001
-    2300214: Beczka_004
-    2300216: Text
-    2300218: Text_001
-    2300220: Stones1_001
-    2300222: Stones1_002
-    2300224: Stones6_002
-    2300226: Konik
     3300000: Beczka
     3300002: Beczka_001
     3300004: Box
@@ -467,16 +437,6 @@ ModelImporter:
     3300202: Ground_MeshPart3
     3300204: Kaktus_005
     3300206: Cylinder
-    3300208: FakeSky
-    3300210: Building1_002
-    3300212: Stones6_001
-    3300214: Beczka_004
-    3300216: Text
-    3300218: Text_001
-    3300220: Stones1_001
-    3300222: Stones1_002
-    3300224: Stones6_002
-    3300226: Konik
     4300000: Ground
     4300002: Beczka
     4300004: Beczka_001
@@ -581,16 +541,6 @@ ModelImporter:
     4300202: Ground_MeshPart3
     4300204: Kaktus_005
     4300206: Cylinder
-    4300208: FakeSky
-    4300210: Building1_002
-    4300212: Stones6_001
-    4300214: Text_001
-    4300216: Text
-    4300218: Beczka_004
-    4300220: Stones1_002
-    4300222: Stones6_002
-    4300224: Stones1_001
-    4300226: Konik
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -624,11 +574,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CactusThorns
     second: {fileID: 2100000, guid: 0d2f8c82f527b5e418e37ad55d55a4a3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FakeSky
-    second: {fileID: 2100000, guid: a2cb4c977ce602444a1af6b9e7de2d72, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
