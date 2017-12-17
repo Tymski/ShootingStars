@@ -17,15 +17,16 @@ public class BulletCollisionController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (other.CompareTag("Player"))
         {
             if(other.gameObject == ThisPlayer)
                 return;
 
-            other.gameObject.SetActive(false);
-            KillPlayer();
+            other.GetComponent<PlayerController>().KillPlayer();
+
+            Destroy();
         }
+
         gameObject.SetActive(false);
     }
 
@@ -39,8 +40,4 @@ public class BulletCollisionController : MonoBehaviour
         CancelInvoke();
     }
 
-    void KillPlayer()
-    {
-        gameObject.SetActive(false);
-    }
 }
