@@ -86,6 +86,9 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
+        if(GameManager.Pause)
+            return;
+
         _moveDirection = new Vector3(_player.GetAxis(PlayerAxis.HORIZONTAL), 0, _player.GetAxis(PlayerAxis.VERTICAL));
 
         UpdateAnimator();
@@ -93,6 +96,9 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.Pause)
+            return;
+
         _rigidbody.position = new Vector3(_rigidbody.position.x + _moveDirection.x * _speed * Time.deltaTime,
             _rigidbody.position.y, _rigidbody.position.z + _moveDirection.z * _speed * Time.deltaTime);
     }

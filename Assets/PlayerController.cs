@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float _timeBeingAStar;
+    public float _timeBeingAStar;
     private float _previousTimeBeingAStar;
 
     [SerializeField]
@@ -104,6 +104,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Pause)
+            return;
+
         if (_isAStar)
         {
             _timeBeingAStar = Time.realtimeSinceStartup - _startTimeBeingAStar;

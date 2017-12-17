@@ -17,6 +17,8 @@ namespace Managers
 
         private InputManager.InputManager _inputManager;
 
+        public static bool Pause;
+
         /// <summary>
         /// GameManager Singletone
         /// </summary>

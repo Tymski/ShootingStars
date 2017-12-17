@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using GamepadInput;
+using Managers;
 using Managers.InputManager;
 
 public class PlayerShootingController : MonoBehaviour
@@ -16,6 +17,9 @@ public class PlayerShootingController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Pause)
+            return;
+
         Vector3 tmpVector = _playerMovementController.MoveDirection;
 
         if (tmpVector.magnitude > 0) _lastVector3 = tmpVector;
