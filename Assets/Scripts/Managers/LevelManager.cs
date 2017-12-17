@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ namespace Managers
 
         public string LevelName;
 
+        public string NextLevelName;
+
         private bool _levelStarted;
         private bool _levelFinished;
 
@@ -31,7 +34,6 @@ namespace Managers
         [SerializeField]
         private TextMeshProUGUI _textMeshPro2;
         
-
         private void Awake()
         {
             Debug.Log("Start");
@@ -48,6 +50,7 @@ namespace Managers
             {
                 GameManager.Pause = false;
                 Debug.Log("Play");
+                GameManager.Instance.AudioManager.PlaySfx(3);
                 _levelStarted = true;
                 _textMeshPro.enabled = false;
                 _textMeshPro2.enabled = true;
@@ -92,6 +95,15 @@ namespace Managers
 
             GameManager.Pause = true;
             Debug.Log("Finish");
+
+            StartCoroutine(LoadNextLevel());
+        }
+
+        private IEnumerator LoadNextLevel()
+        {
+            yield return new WaitForSeconds(5.0f);
+
+            GameManager.Instance.ScenesManager.LoadScene(NextLevelName);
         }
     }
     
