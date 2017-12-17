@@ -165,4 +165,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Bounding"))
+        {
+            Respawn();
+            Debug.Log("Exit");
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Bounding"))
+        {
+            Debug.Log("In bound");
+        }
+    }
+
 }

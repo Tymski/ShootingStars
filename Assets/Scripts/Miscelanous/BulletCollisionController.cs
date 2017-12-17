@@ -29,15 +29,17 @@ public class BulletCollisionController : MonoBehaviour
 
             other.GetComponent<PlayerController>().KillPlayer();
 
-            
-
             Destroy();
         }
-        var particle = Instantiate(_hit, transform.position, Quaternion.identity);
 
-        Debug.Log(particle);
+        if (!other.CompareTag("Bounding"))
+        {
+            var particle = Instantiate(_hit, transform.position, Quaternion.identity);
 
-        gameObject.SetActive(false);
+            Debug.Log(particle);
+
+            gameObject.SetActive(false);
+        }
     }
 
     void Destroy()

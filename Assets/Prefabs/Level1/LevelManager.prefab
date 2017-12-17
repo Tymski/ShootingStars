@@ -74,7 +74,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _cooldownTime: 3
+  _cooldownTime: 100
 --- !u!114 &114943314766699090
 MonoBehaviour:
   m_ObjectHideFlags: 1
