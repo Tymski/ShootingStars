@@ -505,15 +505,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hatSprite: {fileID: 21300000, guid: feaa9187884341d4f89eb58368d8afb5, type: 3}
+  _deathCooldown: 2
+  _invubrebabilityTime: 2
   _star: {fileID: 1198933561695028}
   _player: {fileID: 1567067141334410}
   _hatRenderer: {fileID: 212585166719800980}
   _playerShootingController: {fileID: 114089456739343328}
+  _playerMovementController: {fileID: 0}
   _starCollectiblePrefab: {fileID: 1083190372324222, guid: aee9686ba0892ac4aa54a781889e9604,
     type: 2}
   _text: {fileID: 114485245209099690}
   _sparks: {fileID: 198216093685870006, guid: 3ddb89ab0a84bc5468334f20fc3a9203, type: 2}
-  _respawn: {fileID: 198000010009764244, guid: 312430052df95c74dabbbf24c770df80, type: 2}
+  _respawn: {fileID: 198286210671870100, guid: d8efc73b18a184d43914eb89051e1814, type: 2}
   _starGet: {fileID: 198000012619090656, guid: f2746ecdf91f3ef4ea1bd22d8e19f9e8, type: 2}
 --- !u!114 &114936742561599844
 MonoBehaviour:
@@ -592,7 +595,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 232875d67d3ea1941a3aa2165825884b, type: 3}
-  m_Color: {r: 0.35294116, g: 0.81257606, b: 1, a: 1}
+  m_Color: {r: 0.9923935, g: 1, b: 0.44852942, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
