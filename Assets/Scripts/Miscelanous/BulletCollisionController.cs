@@ -5,6 +5,8 @@ public class BulletCollisionController : MonoBehaviour
     public GameObject ThisPlayer;
     public float DestroyTime = 10f;
 
+    public ParticleSystem _hit;
+
     public void SetPlayer(GameObject thisPlayer)
     {
         ThisPlayer = thisPlayer;
@@ -24,14 +26,20 @@ public class BulletCollisionController : MonoBehaviour
 
             other.GetComponent<PlayerController>().KillPlayer();
 
+            
+
             Destroy();
         }
+        var particle = Instantiate(_hit, transform.position, Quaternion.identity);
+
+        Debug.Log(particle);
 
         gameObject.SetActive(false);
     }
 
     void Destroy()
     {
+
         gameObject.SetActive(false);
     }
 

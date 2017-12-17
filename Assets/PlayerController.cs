@@ -38,6 +38,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ParticleSystem _sparks;
 
+    [SerializeField]
+    private ParticleSystem _respawn;
+
+    [SerializeField]
+    private ParticleSystem _starGet;
+
     private void Awake()
     {
         _hatRenderer.sprite = _hatSprite;
@@ -50,7 +56,11 @@ public class PlayerController : MonoBehaviour
 
     public void BecameAStar()
     {
-        if(_isAStar)
+        var par = Instantiate(_starGet, transform.position, Quaternion.identity);
+
+        par.transform.SetParent(transform);
+
+        if (_isAStar)
             return;
 
         _isAStar = true;
@@ -106,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        var sparks = Instantiate(_sparks, _deathPosition, Quaternion.identity);
+        Instantiate(_sparks, _deathPosition, Quaternion.identity);
 
 
         Respawn();
@@ -126,15 +136,17 @@ public class PlayerController : MonoBehaviour
     private void Respawn()
     {
         transform.position = PlayerSpawningController.GetSpawningPoint();
+
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        Instantiate(_respawn, transform.position, Quaternion.identity);
     }
 
     private void DropCollectible()
     {
-
         Debug.Log("Instantiate");
 
         Instantiate(_starCollectiblePrefab, _deathPosition, Quaternion.identity);
-
 
         Debug.Log("Done");
     }
