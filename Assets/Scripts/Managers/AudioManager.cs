@@ -20,7 +20,7 @@ namespace Managers
 
         public void PlayMusic(int id = 0)
         {
-            if (_backgroundAudioClips.Length >= id)
+            if (id >= _backgroundAudioClips.Length)
             {
                 Debug.LogWarning("There is no music with that id.");
                 return;
@@ -42,13 +42,13 @@ namespace Managers
 
         public void PlaySfx(int id)
         {
-            if (_sfxs.Length >= id)
+            if (id >= _sfxs.Length)
             {
                 Debug.LogWarning("There is no sfx with that id.");
                 return;
             }
 
-            AudioSource.PlayClipAtPoint(_sfxs[id], Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(_sfxs[id], Camera.main.transform.position, 0.5f);
         }
     }
 }

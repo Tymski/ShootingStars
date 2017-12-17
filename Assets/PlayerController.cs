@@ -1,5 +1,6 @@
 ﻿using Managers.InputManager;
 using System.Collections;
+using Managers;
 using TMPro;
 using UnityEngine;
 
@@ -29,17 +30,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private TextMeshProUGUI _text;
 
-
     private bool _isAStar;
     private float _startTimeBeingAStar;
     private Vector3 _deathPosition;
 
     private Player player;
 
+    [SerializeField]
+    private ParticleSystem _sparks;
+
+    [SerializeField]
+    private ParticleSystem _respawn;
+
+    [SerializeField]
+    private ParticleSystem _starGet;
+    
+
     private void Awake()
     {
         _hatRenderer.sprite = _hatSprite;
-
     }
 
     private void Start()
@@ -49,7 +58,12 @@ public class PlayerController : MonoBehaviour
 
     public void BecameAStar()
     {
-        if(_isAStar)
+        GameManager.Instance.AudioManager.PlaySfx(1);
+        var par = Instantiate(_starGet, transform.position, Quaternion.identity);
+
+        par.transform.SetParent(transform);
+
+        if (_isAStar)
             return;
 
         _isAStar = true;
@@ -91,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+
         _deathPosition = transform.position;
 
         Debug.Log("Kill");
@@ -103,6 +118,9 @@ public class PlayerController : MonoBehaviour
             shouldDrop = true;
 
         }
+
+        Instantiate(_sparks, _deathPosition, Quaternion.identity);
+        GameManager.Instance.AudioManager.PlaySfx(0);
 
         Respawn();
 
@@ -121,15 +139,17 @@ public class PlayerController : MonoBehaviour
     private void Respawn()
     {
         transform.position = PlayerSpawningController.GetSpawningPoint();
+
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        Instantiate(_respawn, transform.position, Quaternion.identity);
     }
 
     private void DropCollectible()
     {
-
         Debug.Log("Instantiate");
 
         Instantiate(_starCollectiblePrefab, _deathPosition, Quaternion.identity);
-
 
         Debug.Log("Done");
     }
