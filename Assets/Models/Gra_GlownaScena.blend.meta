@@ -127,6 +127,9 @@ ModelImporter:
     100238: Stones1_002
     100240: Stones6_002
     100242: Konik
+    100244: Beczka_005
+    100246: ExplosiveBarrel
+    100248: Kaktus_006
     400000: Beczka
     400002: Beczka_001
     400004: Box
@@ -249,6 +252,9 @@ ModelImporter:
     400238: Stones1_002
     400240: Stones6_002
     400242: Konik
+    400244: Beczka_005
+    400246: ExplosiveBarrel
+    400248: Kaktus_006
     2300000: Beczka
     2300002: Beczka_001
     2300004: Box
@@ -363,6 +369,9 @@ ModelImporter:
     2300222: Stones1_002
     2300224: Stones6_002
     2300226: Konik
+    2300228: Beczka_005
+    2300230: ExplosiveBarrel
+    2300232: Kaktus_006
     3300000: Beczka
     3300002: Beczka_001
     3300004: Box
@@ -477,6 +486,9 @@ ModelImporter:
     3300222: Stones1_002
     3300224: Stones6_002
     3300226: Konik
+    3300228: Beczka_005
+    3300230: ExplosiveBarrel
+    3300232: Kaktus_006
     4300000: Ground
     4300002: Beczka
     4300004: Beczka_001
@@ -591,6 +603,9 @@ ModelImporter:
     4300222: Stones6_002
     4300224: Stones1_001
     4300226: Konik
+    4300228: Beczka_005
+    4300230: ExplosiveBarrel
+    4300232: Kaktus_006
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -639,6 +654,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: 963fd73abee537b46851daea550679d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 2be589a76da214048b86cbd21e71e4fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
