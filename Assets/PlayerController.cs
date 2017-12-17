@@ -29,17 +29,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private TextMeshProUGUI _text;
 
-
     private bool _isAStar;
     private float _startTimeBeingAStar;
     private Vector3 _deathPosition;
 
     private Player player;
 
+    [SerializeField]
+    private ParticleSystem _sparks;
+
     private void Awake()
     {
         _hatRenderer.sprite = _hatSprite;
-
     }
 
     private void Start()
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+
         _deathPosition = transform.position;
 
         Debug.Log("Kill");
@@ -103,6 +105,9 @@ public class PlayerController : MonoBehaviour
             shouldDrop = true;
 
         }
+
+        var sparks = Instantiate(_sparks, _deathPosition, Quaternion.identity);
+
 
         Respawn();
 

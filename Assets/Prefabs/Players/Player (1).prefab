@@ -437,6 +437,7 @@ MonoBehaviour:
   _starCollectiblePrefab: {fileID: 1083190372324222, guid: aee9686ba0892ac4aa54a781889e9604,
     type: 2}
   _text: {fileID: 114072153680681800}
+  _sparks: {fileID: 198216093685870006, guid: 3ddb89ab0a84bc5468334f20fc3a9203, type: 2}
 --- !u!114 &114602379647815084
 MonoBehaviour:
   m_ObjectHideFlags: 1
