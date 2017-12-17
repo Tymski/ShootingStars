@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
 public class BulletCollisionController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class BulletCollisionController : MonoBehaviour
 
     void OnEnable()
     {
+        GameManager.Instance.AudioManager.PlaySfx(2);
+
         Invoke("Destroy", DestroyTime);
     }
 
