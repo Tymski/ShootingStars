@@ -1,5 +1,6 @@
 ﻿using Managers.InputManager;
 using System.Collections;
+using Managers;
 using TMPro;
 using UnityEngine;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem _starGet;
+    
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public void BecameAStar()
     {
+        GameManager.Instance.AudioManager.PlaySfx(1);
         var par = Instantiate(_starGet, transform.position, Quaternion.identity);
 
         par.transform.SetParent(transform);
@@ -117,7 +120,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Instantiate(_sparks, _deathPosition, Quaternion.identity);
-
+        GameManager.Instance.AudioManager.PlaySfx(0);
 
         Respawn();
 
