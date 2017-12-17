@@ -246,6 +246,16 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114808966166187164, guid: 53f2a3fddf8ab0b40bf5beadfcb8cfe5,
+        type: 2}
+      propertyPath: _deathCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808966166187164, guid: 53f2a3fddf8ab0b40bf5beadfcb8cfe5,
+        type: 2}
+      propertyPath: _invubrebabilityTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f2a3fddf8ab0b40bf5beadfcb8cfe5, type: 2}
   m_IsPrefabParent: 0
@@ -297,6 +307,16 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001430946641768, guid: 8e418cf812c61e24ab3e6547b8574bb5,
+        type: 2}
+      propertyPath: _deathCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001430946641768, guid: 8e418cf812c61e24ab3e6547b8574bb5,
+        type: 2}
+      propertyPath: _invubrebabilityTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e418cf812c61e24ab3e6547b8574bb5, type: 2}
@@ -610,6 +630,16 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114121036593836702, guid: cf353b82b952e314aa7a314afcb2168a,
+        type: 2}
+      propertyPath: _deathCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114121036593836702, guid: cf353b82b952e314aa7a314afcb2168a,
+        type: 2}
+      propertyPath: _invubrebabilityTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf353b82b952e314aa7a314afcb2168a, type: 2}
@@ -1010,6 +1040,16 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904584225185676, guid: b39f66d25a904ff45a8ab830b172c5b9,
+        type: 2}
+      propertyPath: _deathCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904584225185676, guid: b39f66d25a904ff45a8ab830b172c5b9,
+        type: 2}
+      propertyPath: _invubrebabilityTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b39f66d25a904ff45a8ab830b172c5b9, type: 2}

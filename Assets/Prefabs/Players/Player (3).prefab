@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hatSprite: {fileID: 21300000, guid: feaa9187884341d4f89eb58368d8afb5, type: 3}
+  _deathCooldown: 1
   _star: {fileID: 1198933561695028}
   _player: {fileID: 1567067141334410}
   _hatRenderer: {fileID: 212585166719800980}

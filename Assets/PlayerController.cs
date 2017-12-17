@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Sprite _hatSprite;
 
+    [SerializeField] private float _deathCooldown;
+
+    [SerializeField] private float _invubrebabilityTime;
+
     [SerializeField]
     private GameObject _star;
 
@@ -25,10 +29,15 @@ public class PlayerController : MonoBehaviour
     private PlayerShootingController _playerShootingController;
 
     [SerializeField]
+    private PlayerMovementController _playerMovementController;
+
+    [SerializeField]
     private GameObject _starCollectiblePrefab;
 
     [SerializeField] 
     private TextMeshProUGUI _text;
+
+    private bool _invubrebal;
 
     private bool _isAStar;
     private float _startTimeBeingAStar;
@@ -44,15 +53,21 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem _starGet;
-    
+
+    private Collider _collider;
 
     private void Awake()
     {
         _hatRenderer.sprite = _hatSprite;
     }
 
+
+
     private void Start()
     {
+        _collider = GetComponent<Collider>();
+        _playerMovementController = GetComponent<PlayerMovementController>();
+
         transform.position = PlayerSpawningController.GetSpawningPoint(GetComponent<PlayerMovementController>().PlayerId);
     }
 
@@ -105,6 +120,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        if(_invubrebal)
+            return;
 
         _deathPosition = transform.position;
 
@@ -122,7 +139,7 @@ public class PlayerController : MonoBehaviour
         Instantiate(_sparks, _deathPosition, Quaternion.identity);
         GameManager.Instance.AudioManager.PlaySfx(0);
 
-        Respawn();
+        StartCoroutine(StartRespawn());
 
         if (shouldDrop)
             StartCoroutine(Drop());
@@ -130,10 +147,38 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Drop()
     {
-
         yield return new WaitForSeconds(0.3f);
 
         DropCollectible();
+    }
+
+    private IEnumerator StartRespawn()
+    {
+        _star.SetActive(false);
+        _player.SetActive(false);
+        _hatRenderer.enabled = false;
+        _playerShootingController.enabled = false;
+        _playerMovementController.enabled = false;
+        _collider.enabled = false;
+
+         yield return new WaitForSeconds(_deathCooldown);
+
+        _invubrebal = true;
+
+        Respawn();
+
+        _star.SetActive(false);
+        _player.SetActive(true);
+        _hatRenderer.enabled = true;
+        _playerShootingController.enabled = true;
+        _playerMovementController.enabled = true;
+        _collider.enabled = true;
+
+        yield return new WaitForSeconds(_invubrebabilityTime);
+
+        _invubrebal = false;
+
+
     }
 
     private void Respawn()
