@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerId: 0
-  _speed: 7
+  _speed: 0
 --- !u!136 &136323480873840990
 CapsuleCollider:
   m_ObjectHideFlags: 1
