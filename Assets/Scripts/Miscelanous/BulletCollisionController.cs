@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using System.Collections;
+using Managers;
 using UnityEngine;
 
 public class BulletCollisionController : MonoBehaviour
@@ -32,6 +33,12 @@ public class BulletCollisionController : MonoBehaviour
             Destroy();
         }
 
+        if (other.CompareTag("Barell"))
+        {
+            other.transform.GetChild(0).gameObject.SetActive(true);
+            Destroy(gameObject, 2f);
+        }
+
         if (!other.CompareTag("Bounding"))
         {
             var particle = Instantiate(_hit, transform.position, Quaternion.identity);
@@ -44,7 +51,6 @@ public class BulletCollisionController : MonoBehaviour
 
     void Destroy()
     {
-
         gameObject.SetActive(false);
     }
 
@@ -52,5 +58,4 @@ public class BulletCollisionController : MonoBehaviour
     {
         CancelInvoke();
     }
-
 }
