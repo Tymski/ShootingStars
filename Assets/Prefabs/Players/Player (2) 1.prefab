@@ -311,6 +311,8 @@ MonoBehaviour:
     type: 2}
   _text: {fileID: 114455720624078968}
   _sparks: {fileID: 198216093685870006, guid: 3ddb89ab0a84bc5468334f20fc3a9203, type: 2}
+  _respawn: {fileID: 198000010009764244, guid: 312430052df95c74dabbbf24c770df80, type: 2}
+  _starGet: {fileID: 198000012619090656, guid: f2746ecdf91f3ef4ea1bd22d8e19f9e8, type: 2}
 --- !u!114 &114379607166562568
 MonoBehaviour:
   m_ObjectHideFlags: 1
